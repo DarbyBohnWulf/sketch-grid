@@ -2,9 +2,21 @@ h3 {
   text-align: center;
 }
 
+button {
+  width: 100px;
+  height: 30px;
+}
+
+#grid {
+  height: 900px;
+  width: 900px;
+  margin: auto;
+}
+
 #scrib {
   display: inline-block;
-
+  height: 32px;
+  width: 32px;
 }
 
 body * {
