@@ -13,10 +13,15 @@ button {
   margin: auto;
 }
 
-#scrib {
+.scrib {
   display: inline-block;
-  height: 32px;
-  width: 32px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.scribd {
+  background-color: #000;
 }
 
 body * {

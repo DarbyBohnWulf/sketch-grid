@@ -1,14 +1,7 @@
 $(document).ready(function() {
   $('#topWrap').append($('<div id="grid"></div>'));
-  /*
-  var popGrid
-  var addRow = function(num) {
-    do {
-
-    }
-  };*/
   function addScrib() {
-    $('#grid').append($('<div id="scrib"></div>'));
+    $('#grid').append($('<div class="scrib"></div>'));
   };
 
   function addRow(num) {
@@ -20,17 +13,14 @@ $(document).ready(function() {
   };
 
   function popGrid(sqSize) {
-    $('#scrib').height(function() {
-      return 900 / sqSize;
-    });
-    $('#scrib').width(function() {
-      return (900 / this.sqSize);
-    });
     this.i = sqSize;
     do {
       addRow(sqSize);
       i--;
     } while (i > 0);
+    this.scHeight = 900 / sqSize;
+    $('.scrib').height(scHeight);
+    $('.scrib').width(scHeight);
   };
 
   var size = 16;
@@ -41,4 +31,13 @@ $(document).ready(function() {
     popGrid(size);
   });
   popGrid(size);
+  $('.scrib').hover(
+    function() {
+      $(this).addClass("scribd");
+    }, function() {
+      $(this).delay(3000).queue(function() {
+        $(this).removeClass("scribd").dequeue;
+      });
+    }
+  );
 });
